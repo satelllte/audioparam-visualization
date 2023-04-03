@@ -1,8 +1,8 @@
 export class CanvasDrawer {
   private _canvas: HTMLCanvasElement
   private _context: CanvasRenderingContext2D
-  private _time: number = 0
-  private _value: number = 1
+  private _progressX: number = 0
+  private _progressY: number = 0
   private _frameId: number | null = null
 
   private static _pointRadius: number = 3
@@ -20,9 +20,9 @@ export class CanvasDrawer {
     this._context = context
   }
 
-  public updateValues(time: number, value: number) {
-    this._time = time
-    this._value = value
+  public updateValues(progressX: number, progressY: number) {
+    this._progressX = progressX
+    this._progressY = progressY
   }
 
   public start(drawCallback: () => void) {
@@ -32,8 +32,8 @@ export class CanvasDrawer {
       this._context.fillStyle = "#ffffff"
       this._context.beginPath()
       this._context.arc(
-        this._time * this._canvas.width,
-        this._value * this._canvas.height,
+        this._progressX * this._canvas.width,
+        (1 - this._progressY) * this._canvas.height,
         CanvasDrawer._pointRadius,
         CanvasDrawer._pointArcStartAngle,
         CanvasDrawer._pointArcEndAngle,
