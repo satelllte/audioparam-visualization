@@ -6,7 +6,7 @@ const duration = 2
 const minValue = 55
 const maxValue = 440
 
-export const VisualizationAtTime = () => {
+export const VisualizationValueCurveAtTime = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   const onStart = () => {
@@ -22,7 +22,16 @@ export const VisualizationAtTime = () => {
     osc.connect(audioCtx.destination)
 
     const startTime = audioCtx.currentTime
-    osc.frequency.setValueAtTime(maxValue, startTime + duration / 2)
+    osc.frequency.setValueCurveAtTime([
+      minValue,
+      maxValue * 0.25,
+      minValue,
+      maxValue * 0.5,
+      minValue,
+      maxValue * 0.75,
+      minValue,
+      maxValue * 1.0,
+    ], startTime, duration)
 
     osc.start(startTime)
     osc.stop(startTime + duration)
@@ -42,7 +51,7 @@ export const VisualizationAtTime = () => {
 
   return (
     <Visualization
-      title="setValueAtTime"
+      title="setValueCurveAtTime"
       onStart={onStart}
       canvasRef={canvasRef}
     />

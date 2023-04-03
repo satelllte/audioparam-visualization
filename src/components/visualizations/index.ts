@@ -1,2 +1,7 @@
 export { VisualizationAtTime } from './VisualizationAtTime'
+export { VisualizationCancelHold } from './VisualizationCancelHold'
+export { VisualizationCancelScheduled } from './VisualizationCancelScheduled'
+export { VisualizationExp } from './VisualizationExp'
 export { VisualizationLinear } from './VisualizationLinear'
+export { VisualizationTargetAtTime } from './VisualizationTargetAtTime'
+export { VisualizationValueCurveAtTime } from './VisualizationValueCurveAtTime'

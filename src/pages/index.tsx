@@ -1,7 +1,12 @@
 import Head from 'next/head'
 import {
   VisualizationAtTime,
+  VisualizationTargetAtTime,
+  VisualizationValueCurveAtTime,
   VisualizationLinear,
+  VisualizationExp,
+  VisualizationCancelHold,
+  VisualizationCancelScheduled,
 } from '@/components/visualizations'
 
 const HomePage = () => {
@@ -16,7 +21,12 @@ const HomePage = () => {
       <div className='p-4'>
         <h1 className='text-2xl text-center'>AudioParam Visualization</h1>
         <VisualizationAtTime/>
+        <VisualizationTargetAtTime/>
+        <VisualizationValueCurveAtTime/>
         <VisualizationLinear/>
+        <VisualizationExp/>
+        <VisualizationCancelHold/>
+        <VisualizationCancelScheduled/>
       </div>
     </>
   )

@@ -6,7 +6,7 @@ const duration = 2
 const minValue = 55
 const maxValue = 440
 
-export const VisualizationAtTime = () => {
+export const VisualizationCancelHold = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   const onStart = () => {
@@ -22,7 +22,8 @@ export const VisualizationAtTime = () => {
     osc.connect(audioCtx.destination)
 
     const startTime = audioCtx.currentTime
-    osc.frequency.setValueAtTime(maxValue, startTime + duration / 2)
+    osc.frequency.linearRampToValueAtTime(maxValue, startTime + duration)
+    osc.frequency.cancelAndHoldAtTime(startTime + duration / 2)
 
     osc.start(startTime)
     osc.stop(startTime + duration)
@@ -42,7 +43,7 @@ export const VisualizationAtTime = () => {
 
   return (
     <Visualization
-      title="setValueAtTime"
+      title="cancelAndHoldAtTime"
       onStart={onStart}
       canvasRef={canvasRef}
     />
