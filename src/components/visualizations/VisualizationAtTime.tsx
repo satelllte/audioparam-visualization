@@ -35,7 +35,7 @@ export const VisualizationAtTime = () => {
 
     canvasDrawer.start(() => {
       const x = Math.min(1, (audioCtx.currentTime - startTime) / duration)
-      const y = Math.min(1, (osc.frequency.value - minValue) / maxValue)
+      const y = Math.min(1, (osc.frequency.value - minValue) / (maxValue - minValue))
       canvasDrawer.updateValues(x, y)
     })
   }

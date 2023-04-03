@@ -19,7 +19,9 @@ const HomePage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className='p-4'>
-        <h1 className='text-2xl text-center'>AudioParam Visualization</h1>
+        <header className='py-4'>
+          <h1 className='text-2xl text-center'>AudioParam Visualization</h1>
+        </header>
         <VisualizationAtTime/>
         <VisualizationTargetAtTime/>
         <VisualizationValueCurveAtTime/>

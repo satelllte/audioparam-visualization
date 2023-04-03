@@ -12,12 +12,17 @@ export const Visualization = ({
   onStart,
 }: Props) => {
   return (
-    <div>
+    <div className="py-6 max-w-xl">
       <h2>{title}</h2>
-      <Button onClick={onStart}>Start</Button>
-      <div className='py-2'>
-        <canvas ref={canvasRef} width={500} height={250}/>
+      <div className='p-4'>
+        <canvas
+          className="bg-[length:10px_10px] bg-[radial-gradient(theme(colors.sky[900])_10%,_transparent_10%)]"
+          ref={canvasRef}
+          width={500}
+          height={250}
+        />
       </div>
+      <Button onClick={onStart}>Start</Button>
     </div>
   )
 }

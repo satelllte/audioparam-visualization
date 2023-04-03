@@ -13,7 +13,7 @@ export const ButtonBase = forwardRef<HTMLButtonElement, ButtonBaseProps>((
   return (
     <button
       ref={ref}
-      className={`cursor-auto p-4 w-full uppercase font-bold border-2 disabled:opacity-50 transition-all ${className}`}
+      className={`cursor-auto py-4 px-8 --w-full uppercase font-bold border-2 disabled:opacity-50 transition-all ${className}`}
       {...rest}
     />
   )

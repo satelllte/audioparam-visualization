@@ -18,7 +18,6 @@ export class CanvasDrawer {
     this._context = context
   }
 
-
   /**
    * @param {number} x - time progress in [0, 1] range
    * @param {number} y - value progress in [0, 1] range
@@ -38,10 +37,10 @@ export class CanvasDrawer {
       this._context.strokeStyle = '#ffffff'
       this._context.lineWidth = 1
       this._context.beginPath()
-      const x1 = this._xPrev * this._canvas.width
-      const x2 = this._x * this._canvas.width
-      const y1 = (1 - this._yPrev) * this._canvas.height
-      const y2 = (1 - this._y) * this._canvas.height
+      const x1 = Math.round(this._xPrev * this._canvas.width)
+      const x2 = Math.round(this._x * this._canvas.width)
+      const y1 = Math.round((1 - this._yPrev) * this._canvas.height)
+      const y2 = Math.round((1 - this._y) * this._canvas.height)
       this._context.moveTo(x1, y1)
       this._context.lineTo(x2, y2)
       this._context.stroke()
