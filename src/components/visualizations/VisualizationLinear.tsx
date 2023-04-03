@@ -1,6 +1,6 @@
 import { useRef } from "react"
-import { Button } from "@/components/blocks/Button"
 import { CanvasDrawer } from "./CanvasDrawer"
+import { Visualization } from "./Visualization"
 
 const duration = 2
 const minValue = 55
@@ -9,7 +9,7 @@ const maxValue = 440
 export const VisualizationLinear = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
-  const start = () => {
+  const onStart = () => {
     if (!canvasRef.current) {
       return
     }
@@ -41,12 +41,10 @@ export const VisualizationLinear = () => {
   }
 
   return (
-    <div>
-      <h2>linearRampToValueAtTime</h2>
-      <Button onClick={start}>Start</Button>
-      <div className='py-2'>
-        <canvas ref={canvasRef} width={500} height={250}/>
-      </div>
-    </div>
+    <Visualization
+      title="linearRampToValueAtTime"
+      onStart={onStart}
+      canvasRef={canvasRef}
+    />
   )
 }

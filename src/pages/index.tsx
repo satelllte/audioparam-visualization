@@ -1,6 +1,8 @@
 import Head from 'next/head'
-import { VisualizationAtTime } from '@/components/visualizations/VisualizationAtTime'
-import { VisualizationLinear } from '@/components/visualizations/VisualizationLinear'
+import {
+  VisualizationAtTime,
+  VisualizationLinear,
+} from '@/components/visualizations'
 
 const HomePage = () => {
   return (

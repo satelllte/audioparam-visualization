@@ -1,6 +1,7 @@
 import { useRef } from "react"
 import { Button } from "@/components/blocks/Button"
 import { CanvasDrawer } from './CanvasDrawer'
+import { Visualization } from "./Visualization"
 
 const duration = 2
 const minValue = 55
@@ -9,7 +10,7 @@ const maxValue = 440
 export const VisualizationAtTime = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
-  const start = () => {
+  const onStart = () => {
     if (!canvasRef.current) {
       return
     }
@@ -41,12 +42,10 @@ export const VisualizationAtTime = () => {
   }
 
   return (
-    <div>
-      <h2>setValueAtTime</h2>
-      <Button onClick={start}>Start</Button>
-      <div className='py-2'>
-        <canvas ref={canvasRef} width={500} height={250}/>
-      </div>
-    </div>
+    <Visualization
+      title="setValueAtTime"
+      onStart={onStart}
+      canvasRef={canvasRef}
+    />
   )
 }
