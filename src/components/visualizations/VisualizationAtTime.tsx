@@ -1,12 +1,12 @@
 import { useRef } from "react"
 import { Button } from "@/components/blocks/Button"
-import { CanvasDrawer } from "./CanvasDrawer"
+import { CanvasDrawer } from './CanvasDrawer'
 
 const duration = 2
 const minValue = 55
 const maxValue = 440
 
-export const VisualizationLinear = () => {
+export const VisualizationAtTime = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   const start = () => {
@@ -22,7 +22,7 @@ export const VisualizationLinear = () => {
     osc.connect(audioCtx.destination)
 
     const startTime = audioCtx.currentTime
-    osc.frequency.linearRampToValueAtTime(maxValue, startTime + duration)
+    osc.frequency.setValueAtTime(maxValue, startTime + duration / 2)
 
     osc.start(startTime)
     osc.stop(startTime + duration)
@@ -42,7 +42,7 @@ export const VisualizationLinear = () => {
 
   return (
     <div>
-      <h2>linearRampToValueAtTime</h2>
+      <h2>setValueAtTime</h2>
       <Button onClick={start}>Start</Button>
       <div className='py-2'>
         <canvas ref={canvasRef} width={500} height={250}/>

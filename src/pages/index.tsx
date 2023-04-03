@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { VisualizationAtTime } from '@/components/visualizations/VisualizationAtTime'
 import { VisualizationLinear } from '@/components/visualizations/VisualizationLinear'
 
 const HomePage = () => {
@@ -12,6 +13,7 @@ const HomePage = () => {
       </Head>
       <div className='p-4'>
         <h1 className='text-2xl text-center'>AudioParam Visualization</h1>
+        <VisualizationAtTime/>
         <VisualizationLinear/>
       </div>
     </>
