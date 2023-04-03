@@ -1,12 +1,12 @@
 import Head from 'next/head'
 import {
-  VisualizationAtTime,
-  VisualizationTargetAtTime,
-  VisualizationValueCurveAtTime,
-  VisualizationLinear,
-  VisualizationExp,
-  VisualizationCancelHold,
-  VisualizationCancelScheduled,
+  VisualizationSetValueAtTime,
+  VisualizationSetTargetAtTime,
+  VisualizationSetValueCurveAtTime,
+  VisualizationLinearRampToValueAtTime,
+  VisualizationExponentialRampToValueAtTime,
+  VisualizationCancelAndHoldAtTime,
+  VisualizationCancelScheduledValues,
 } from '@/components/visualizations'
 
 const HomePage = () => {
@@ -22,13 +22,13 @@ const HomePage = () => {
         <header className='py-4'>
           <h1 className='text-2xl text-center'>AudioParam Visualization</h1>
         </header>
-        <VisualizationAtTime/>
-        <VisualizationTargetAtTime/>
-        <VisualizationValueCurveAtTime/>
-        <VisualizationLinear/>
-        <VisualizationExp/>
-        <VisualizationCancelHold/>
-        <VisualizationCancelScheduled/>
+        <VisualizationSetValueAtTime/>
+        <VisualizationSetTargetAtTime/>
+        <VisualizationSetValueCurveAtTime/>
+        <VisualizationLinearRampToValueAtTime/>
+        <VisualizationExponentialRampToValueAtTime/>
+        <VisualizationCancelAndHoldAtTime/>
+        <VisualizationCancelScheduledValues/>
       </div>
     </>
   )
