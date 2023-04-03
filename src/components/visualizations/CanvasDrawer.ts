@@ -1,10 +1,10 @@
 export class CanvasDrawer {
   private _canvas: HTMLCanvasElement
   private _context: CanvasRenderingContext2D
-  private _progressXPrev: number = 0
-  private _progressYPrev: number = 0
-  private _progressX: number = 0
-  private _progressY: number = 0
+  private _xPrev: number = 0
+  private _yPrev: number = 0
+  private _x: number = 0
+  private _y: number = 0
   private _frameId: number | null = null
 
   constructor(canvas: HTMLCanvasElement) {
@@ -18,11 +18,17 @@ export class CanvasDrawer {
     this._context = context
   }
 
-  public updateValues(progressX: number, progressY: number) {
-    this._progressXPrev = this._progressX
-    this._progressYPrev = this._progressY
-    this._progressX = progressX
-    this._progressY = progressY
+
+  /**
+   * @param {number} x - time progress in [0, 1] range
+   * @param {number} y - value progress in [0, 1] range
+   * @returns {void}
+   */
+  public updateValues(x: number, y: number): void {
+    this._xPrev = this._x
+    this._yPrev = this._y
+    this._x = x
+    this._y = y
   }
 
   public start(drawCallback: () => void) {
@@ -32,8 +38,12 @@ export class CanvasDrawer {
       this._context.strokeStyle = '#ffffff'
       this._context.lineWidth = 1
       this._context.beginPath()
-      this._context.moveTo(this._progressXPrev * this._canvas.width, (1 - this._progressYPrev) * this._canvas.height)
-      this._context.lineTo(this._progressX * this._canvas.width, (1 - this._progressY) * this._canvas.height)
+      const x1 = this._xPrev * this._canvas.width
+      const x2 = this._x * this._canvas.width
+      const y1 = (1 - this._yPrev) * this._canvas.height
+      const y2 = (1 - this._y) * this._canvas.height
+      this._context.moveTo(x1, y1)
+      this._context.lineTo(x2, y2)
       this._context.stroke()
   
       drawCallback()
