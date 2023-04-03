@@ -1,13 +1,11 @@
 export class CanvasDrawer {
   private _canvas: HTMLCanvasElement
   private _context: CanvasRenderingContext2D
+  private _progressXPrev: number = 0
+  private _progressYPrev: number = 0
   private _progressX: number = 0
   private _progressY: number = 0
   private _frameId: number | null = null
-
-  private static _pointRadius: number = 3
-  private static _pointArcStartAngle: number = 0
-  private static _pointArcEndAngle: number = Math.PI * 2
 
   constructor(canvas: HTMLCanvasElement) {
     const context = canvas.getContext('2d')
@@ -21,6 +19,8 @@ export class CanvasDrawer {
   }
 
   public updateValues(progressX: number, progressY: number) {
+    this._progressXPrev = this._progressX
+    this._progressYPrev = this._progressY
     this._progressX = progressX
     this._progressY = progressY
   }
@@ -29,18 +29,12 @@ export class CanvasDrawer {
     this._context.clearRect(0, 0, this._canvas.width, this._canvas.height)
 
     const draw = () => {
-      this._context.fillStyle = "#ffffff"
+      this._context.strokeStyle = '#ffffff'
+      this._context.lineWidth = 1
       this._context.beginPath()
-      this._context.arc(
-        this._progressX * this._canvas.width,
-        (1 - this._progressY) * this._canvas.height,
-        CanvasDrawer._pointRadius,
-        CanvasDrawer._pointArcStartAngle,
-        CanvasDrawer._pointArcEndAngle,
-        true,
-      )
-      this._context.closePath()
-      this._context.fill()
+      this._context.moveTo(this._progressXPrev * this._canvas.width, (1 - this._progressYPrev) * this._canvas.height)
+      this._context.lineTo(this._progressX * this._canvas.width, (1 - this._progressY) * this._canvas.height)
+      this._context.stroke()
   
       drawCallback()
 
