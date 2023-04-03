@@ -8,7 +8,7 @@ export const VisualizationSetTargetAtTime = () => {
     minValue,
     maxValue,
   }) => {
-    const timeConstant = 0.5
+    const timeConstant = 0.15
     param.setTargetAtTime(maxValue, startTime, timeConstant)
   }
 

@@ -1,8 +1,8 @@
-import { useRef } from "react"
+import { useEffect, useRef } from "react"
 import { Button } from "@/components/blocks/Button"
 import { CanvasDrawer } from "./CanvasDrawer"
 
-const duration = 2
+const duration = 1
 const minValue = 110
 const maxValue = 440
 
@@ -27,6 +27,23 @@ export const Visualization = ({
 }: Props) => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
+  useEffect(() => {
+    if (!canvasRef.current) {
+      return
+    }
+
+    const canvas = canvasRef.current
+    const pixelRatio = Math.min(window.devicePixelRatio, 2)
+
+    canvas.width *= pixelRatio
+    canvas.height *= pixelRatio
+
+    return () => { // prevent 4x canvas size in React strict mode
+      canvas.width /= pixelRatio
+      canvas.height /= pixelRatio
+    }
+  })
+
   const onStart = () => {
     if (!canvasRef.current) {
       return
@@ -50,7 +67,7 @@ export const Visualization = ({
     })
 
     osc.start(startTime)
-    osc.stop(startTime + duration)
+    osc.stop(startTime + duration + 0.025) // give a bit of time to let the graphs draw up to max
 
     const canvasDrawer = new CanvasDrawer(canvas)
 
@@ -68,9 +85,9 @@ export const Visualization = ({
   return (
     <div className="py-6 max-w-xl">
       <h2>{title}</h2>
-      <div className='py-4'>
+      <div className='my-4 relative w-[500px] h-[250px] max-w-full'>
         <canvas
-          className="bg-[length:10px_10px] bg-[radial-gradient(theme(colors.sky[900])_10%,_transparent_10%)]"
+          className="absolute inset-0 p-1 w-full h-full border border-stone-900 --bg-[length:10px_10px] --bg-[radial-gradient(theme(colors.sky[900])_10%,_transparent_10%)]"
           ref={canvasRef}
           width={500}
           height={250}
