@@ -1,0 +1,28 @@
+{
+  "name": "audioparam-visualization",
+  "version": "0.1.0-alpha.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test:lint": "next lint",
+    "test:types": "tsc",
+    "deps:update": "npm i $(npm outdated | cut -d' ' -f 1 | sed '1d' | xargs -I '$' echo '$@latest' | xargs echo) --save-exact"
+  },
+  "dependencies": {
+    "next": "13.2.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "18.14.6",
+    "@types/react": "18.0.28",
+    "@types/react-dom": "18.0.11",
+    "autoprefixer": "10.4.13",
+    "eslint": "8.35.0",
+    "eslint-config-next": "13.2.3",
+    "postcss": "8.4.21",
+    "tailwindcss": "3.2.7",
+    "typescript": "4.9.5"
+  }
+}
