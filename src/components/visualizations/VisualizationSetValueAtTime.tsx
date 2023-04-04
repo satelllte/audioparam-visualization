@@ -8,7 +8,7 @@ export const VisualizationSetValueAtTime = () => {
     minValue,
     maxValue,
   }) => {
-    param.setValueAtTime(maxValue, startTime + duration / 2)
+    param.setValueAtTime(maxValue, startTime + duration * 0.5)
   }
 
   return (

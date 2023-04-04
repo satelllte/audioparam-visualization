@@ -9,7 +9,7 @@ export const VisualizationCancelAndHoldAtTime = () => {
     maxValue,
   }) => {
     param.linearRampToValueAtTime(maxValue, startTime + duration)
-    param.cancelAndHoldAtTime(startTime + duration / 2)
+    param.cancelAndHoldAtTime(startTime + duration * 0.5)
   }
 
   return (
