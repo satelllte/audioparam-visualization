@@ -17,7 +17,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>((
   return (
     <ButtonBase
       ref={ref}
-      className='border-white hover:bg-zinc-900/75 focus:bg-zinc-900/90 active:bg-zinc-900 '
+      className='border-white/50 hover:bg-zinc-900/75 focus:bg-zinc-900/90 active:bg-zinc-900 '
       {...props}
     />
   )

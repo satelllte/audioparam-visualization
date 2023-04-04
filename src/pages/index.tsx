@@ -1,10 +1,10 @@
 import Head from 'next/head'
 import {
   VisualizationSetValueAtTime,
-  VisualizationSetTargetAtTime,
-  VisualizationSetValueCurveAtTime,
   VisualizationLinearRampToValueAtTime,
   VisualizationExponentialRampToValueAtTime,
+  VisualizationSetTargetAtTime,
+  VisualizationSetValueCurveAtTime,
   VisualizationCancelAndHoldAtTime,
   VisualizationCancelScheduledValues,
 } from '@/components/visualizations'
@@ -20,15 +20,17 @@ const HomePage = () => {
       </Head>
       <div className='p-4'>
         <header className='py-4'>
-          <h1 className='text-2xl text-center'>AudioParam Visualization</h1>
+          <h1 className='font-bold text-3xl md:text-4xl text-center'>AudioParam Visualization</h1>
         </header>
-        <VisualizationSetValueAtTime/>
-        <VisualizationSetTargetAtTime/>
-        <VisualizationSetValueCurveAtTime/>
-        <VisualizationLinearRampToValueAtTime/>
-        <VisualizationExponentialRampToValueAtTime/>
-        <VisualizationCancelAndHoldAtTime/>
-        <VisualizationCancelScheduledValues/>
+        <main className='mx-auto flex flex-col items-center xl:grid grid-cols-2 justify-center'>
+          <VisualizationSetValueAtTime/>
+          <VisualizationLinearRampToValueAtTime/>
+          <VisualizationExponentialRampToValueAtTime/>
+          <VisualizationSetTargetAtTime/>
+          <VisualizationSetValueCurveAtTime/>
+          <VisualizationCancelAndHoldAtTime/>
+          <VisualizationCancelScheduledValues/>
+        </main>
       </div>
     </>
   )

@@ -1,5 +1,7 @@
+import Link from "next/link"
 import { useEffect, useRef } from "react"
 import { Button } from "@/components/blocks/Button"
+import { IconExternalLink } from "@/components/icons/IconExternalLink"
 import { CanvasDrawer } from "./CanvasDrawer"
 
 const duration = 1
@@ -18,11 +20,15 @@ export type AudioProcessingSchedulerFn = (options: AudioProcessingSchedulerOptio
 
 interface Props {
   title: string
+  description?: React.ReactNode
+  code?: string
   scheduleAudioProcessing: AudioProcessingSchedulerFn
 }
 
 export const Visualization = ({
   title,
+  description,
+  code,
   scheduleAudioProcessing,
 }: Props) => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -82,18 +88,40 @@ export const Visualization = ({
     })
   }
 
+  const mdnUrl = `https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/${title}`
+
   return (
-    <div className="py-6 max-w-xl">
-      <h2>{title}</h2>
-      <div className='my-4 relative w-[500px] h-[250px] max-w-full'>
+    <div className="py-6 w-full max-w-[600px]">
+      <h2 className="py-2 text-xl font-bold">{`${title}()`}</h2>
+      {description && (
+        <div>{description}</div>
+      )}
+      <div className="pb-4 pt-2">
+        <Link
+          className="text-cyan-400 inline-flex gap-1 items-center border-b border-b-transparent hover:border-b-cyan-400 motion-safe:transition-colors"
+          href={mdnUrl}
+          target="_blank"
+        >
+          MDN Docs <IconExternalLink/>
+        </Link>
+      </div>
+      {code && (
+        <div className="py-2">
+          <h3>Source code:</h3>
+          <pre className="border border-stone-800 --rounded-md my-2 px-2 py-4 text-xs sm:text-sm --pt-1 --pb-4 overflow-x-auto">
+            {code}
+          </pre>
+        </div>
+      )}
+      <div className='my-4 relative h-[250px] max-w-full'>
         <canvas
-          className="absolute inset-0 p-1 w-full h-full border border-stone-900 --bg-[length:10px_10px] --bg-[radial-gradient(theme(colors.sky[900])_10%,_transparent_10%)]"
+          className="absolute inset-0 p-1 w-full h-full border border-stone-800 --bg-[length:10px_10px] --bg-[radial-gradient(theme(colors.sky[900])_10%,_transparent_10%)]"
           ref={canvasRef}
-          width={500}
+          width={600}
           height={250}
         />
       </div>
-      <Button onClick={onStart}>Start</Button>
+      <Button onClick={onStart}>Play</Button>
     </div>
   )
 }
