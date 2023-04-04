@@ -1,5 +1,4 @@
 import { forwardRef } from 'react'
-import { ButtonBase } from './ButtonBase'
 
 type ButtonNativeProps = React.ButtonHTMLAttributes<HTMLButtonElement>
 type ExtendableButtonNativeProps = Omit<ButtonNativeProps,
@@ -15,9 +14,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>((
   ref,
 ) => {
   return (
-    <ButtonBase
+    <button
       ref={ref}
-      className='border-white/50 hover:bg-zinc-900/75 focus:bg-zinc-900/90 active:bg-zinc-900 '
+      className='cursor-auto py-4 px-8 font-bold border disabled:opacity-50 motion-safe:transition-all border-white/50 hover:bg-zinc-900/75 focus:bg-zinc-900/90 active:bg-zinc-900 '
       {...props}
     />
   )
