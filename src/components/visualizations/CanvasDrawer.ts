@@ -35,7 +35,7 @@ export class CanvasDrawer {
 
     const draw = () => {
       this._context.strokeStyle = '#ffffff'
-      this._context.lineWidth = 2
+      this._context.lineWidth = 4
       this._context.beginPath()
       const x1 = Math.round(this._xPrev * this._canvas.width)
       const x2 = Math.round(this._x * this._canvas.width)
