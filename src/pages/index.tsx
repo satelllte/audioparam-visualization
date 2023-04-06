@@ -11,11 +11,14 @@ import {
 const HomePage = () => {
   return (
     <>
-      <div className='p-4'>
-        <header className='py-4'>
-          <h1 className='font-bold text-3xl md:text-4xl text-center'>AudioParam Visualization</h1>
+      <div className='px-4'>
+        <header className='py-12 md:py-20 flex flex-col max-w-3xl mx-auto gap-4'>
+          <h1 className='font-bold text-3xl md:text-4xl'>AudioParam Visualization</h1>
+          <h2 className='flex text-xl'>
+            {'Visualization of how Web Audio API\'s AudioParam value changes over time.'}
+          </h2>
         </header>
-        <main className='flex flex-col gap-8'>
+        <main className='max-w-3xl mx-auto flex flex-col gap-8'>
           <VisualizationSetValueAtTime/>
           <VisualizationLinearRampToValueAtTime/>
           <VisualizationExponentialRampToValueAtTime/>

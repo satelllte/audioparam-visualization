@@ -1,3 +1,10 @@
+import resolveConfig from 'tailwindcss/resolveConfig'
+import twConfig from '@/../tailwind.config.js'
+
+const tailwindConfig = resolveConfig(twConfig)
+
+const lineColor = tailwindConfig.theme?.colors?.accent.toString() || '#FFFFFF'
+
 export class CanvasDrawer {
   private _canvas: HTMLCanvasElement
   private _context: CanvasRenderingContext2D
@@ -34,7 +41,7 @@ export class CanvasDrawer {
     this._context.clearRect(0, 0, this._canvas.width, this._canvas.height)
 
     const draw = () => {
-      this._context.strokeStyle = '#ffffff'
+      this._context.strokeStyle = lineColor
       this._context.lineWidth = 5
       this._context.beginPath()
       const x1 = Math.round(this._xPrev * this._canvas.width)
