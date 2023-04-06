@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { useEffect, useRef } from "react"
-import { Button } from "@/components/blocks/Button"
+import { IconPlay } from "@/components/icons/IconPlay"
 import { IconExternalLink } from "@/components/icons/IconExternalLink"
 import { CanvasDrawer } from "./CanvasDrawer"
 
@@ -91,24 +91,21 @@ export const Visualization = ({
   const mdnUrl = `https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/${title}`
 
   return (
-    <section className="py-6 flex flex-col items-center gap-4 lg:flex-row lg:items-start">
+    <section className="w-full py-6 flex flex-col items-center gap-4 xl:flex-row xl:items-start xl:justify-center">
       <div className="lg:flex-1 w-full max-w-[600px]">
-        <h2 className="py-2 text-xl font-bold">{`${title}()`}</h2>
+        <h2 className="py-2 text-xl md:text-2xl font-bold">{`${title}()`}</h2>
+        <Link
+          className="mb-4 text-cyan-400 inline-flex gap-1 items-center border-b border-b-transparent hover:border-b-cyan-400 motion-safe:transition-colors"
+          href={mdnUrl}
+          target="_blank"
+        >
+          MDN Docs <IconExternalLink/>
+        </Link>
         {description && (
           <div>{description}</div>
         )}
-        <div className="pb-4 pt-2">
-          <Link
-            className="text-cyan-400 inline-flex gap-1 items-center border-b border-b-transparent hover:border-b-cyan-400 motion-safe:transition-colors"
-            href={mdnUrl}
-            target="_blank"
-          >
-            MDN Docs <IconExternalLink/>
-          </Link>
-        </div>
         {code && (
           <div className="py-2">
-            {/* <h3>Source code:</h3> */}
             <pre className="border border-stone-800 --rounded-md my-2 px-2 py-4 text-xs sm:text-sm --pt-1 --pb-4 overflow-x-auto">
               {code}
             </pre>
@@ -123,8 +120,13 @@ export const Visualization = ({
             width={600}
             height={250}
           />
+          <button
+            onClick={onStart}
+            className='absolute left-2 top-2 cursor-default hover:text-sky-400 active:text-sky-700'
+          >
+            <IconPlay/>
+          </button>
         </div>
-        <Button onClick={onStart}>Play</Button>
       </div>
     </section>
   )
