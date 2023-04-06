@@ -15,7 +15,7 @@ const HomePage = () => {
         <header className='py-4'>
           <h1 className='font-bold text-3xl md:text-4xl text-center'>AudioParam Visualization</h1>
         </header>
-        <main className='mx-auto flex flex-col items-center xl:grid grid-cols-2 justify-center'>
+        <main className='px-4'>
           <VisualizationSetValueAtTime/>
           <VisualizationLinearRampToValueAtTime/>
           <VisualizationExponentialRampToValueAtTime/>

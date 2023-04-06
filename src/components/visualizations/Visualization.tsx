@@ -91,37 +91,41 @@ export const Visualization = ({
   const mdnUrl = `https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/${title}`
 
   return (
-    <div className="py-6 w-full max-w-[600px]">
-      <h2 className="py-2 text-xl font-bold">{`${title}()`}</h2>
-      {description && (
-        <div>{description}</div>
-      )}
-      <div className="pb-4 pt-2">
-        <Link
-          className="text-cyan-400 inline-flex gap-1 items-center border-b border-b-transparent hover:border-b-cyan-400 motion-safe:transition-colors"
-          href={mdnUrl}
-          target="_blank"
-        >
-          MDN Docs <IconExternalLink/>
-        </Link>
-      </div>
-      {code && (
-        <div className="py-2">
-          <h3>Source code:</h3>
-          <pre className="border border-stone-800 --rounded-md my-2 px-2 py-4 text-xs sm:text-sm --pt-1 --pb-4 overflow-x-auto">
-            {code}
-          </pre>
+    <section className="py-6 flex flex-col items-center gap-4 lg:flex-row lg:items-start">
+      <div className="lg:flex-1 w-full max-w-[600px]">
+        <h2 className="py-2 text-xl font-bold">{`${title}()`}</h2>
+        {description && (
+          <div>{description}</div>
+        )}
+        <div className="pb-4 pt-2">
+          <Link
+            className="text-cyan-400 inline-flex gap-1 items-center border-b border-b-transparent hover:border-b-cyan-400 motion-safe:transition-colors"
+            href={mdnUrl}
+            target="_blank"
+          >
+            MDN Docs <IconExternalLink/>
+          </Link>
         </div>
-      )}
-      <div className='my-4 relative h-[250px] max-w-full'>
-        <canvas
-          className="absolute inset-0 p-1 w-full h-full border border-stone-800 --bg-[length:10px_10px] --bg-[radial-gradient(theme(colors.sky[900])_10%,_transparent_10%)]"
-          ref={canvasRef}
-          width={600}
-          height={250}
-        />
+        {code && (
+          <div className="py-2">
+            {/* <h3>Source code:</h3> */}
+            <pre className="border border-stone-800 --rounded-md my-2 px-2 py-4 text-xs sm:text-sm --pt-1 --pb-4 overflow-x-auto">
+              {code}
+            </pre>
+          </div>
+        )}
       </div>
-      <Button onClick={onStart}>Play</Button>
-    </div>
+      <div className="lg:flex-1 w-full max-w-[600px]">
+        <div className='mb-4 relative h-[250px] max-w-full'>
+          <canvas
+            className="absolute inset-0 p-1 w-full h-full border border-stone-800 --bg-[length:10px_10px] --bg-[radial-gradient(theme(colors.sky[900])_10%,_transparent_10%)]"
+            ref={canvasRef}
+            width={600}
+            height={250}
+          />
+        </div>
+        <Button onClick={onStart}>Play</Button>
+      </div>
+    </section>
   )
 }
