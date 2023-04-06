@@ -5,6 +5,9 @@ import type { AppProps } from 'next/app'
 
 const inter = Inter({ subsets: ['latin'] })
 
+const title = 'AudioParam Visualization'
+const description = 'Visualization of how Web Audio API\'s AudioParam value changes over time'
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
@@ -14,10 +17,12 @@ export default function App({ Component, pageProps }: AppProps) {
         }
       `}</style>
       <Head>
-        <title>AudioParam Visualization</title>
-        <meta name="description" content="AudioParam Visualization" />
+        <title>{title}</title>
+        <meta name="description" content={description}/>
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" />
       </Head>
       <Component {...pageProps} />
     </>
