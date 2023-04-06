@@ -20,8 +20,8 @@ export type AudioProcessingSchedulerFn = (options: AudioProcessingSchedulerOptio
 
 interface Props {
   title: string
-  description?: React.ReactNode
-  code?: string
+  description: React.ReactNode
+  code: string
   scheduleAudioProcessing: AudioProcessingSchedulerFn
 }
 
@@ -91,42 +91,34 @@ export const Visualization = ({
   const mdnUrl = `https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/${title}`
 
   return (
-    <section className="w-full py-6 flex flex-col items-center gap-4 xl:flex-row xl:items-start xl:justify-center">
-      <div className="lg:flex-1 w-full max-w-[600px]">
-        <h2 className="py-2 text-xl md:text-2xl font-bold">{`${title}()`}</h2>
-        <Link
-          className="mb-4 text-cyan-400 inline-flex gap-1 items-center border-b border-b-transparent hover:border-b-cyan-400 motion-safe:transition-colors"
-          href={mdnUrl}
-          target="_blank"
-        >
-          MDN Docs <IconExternalLink/>
-        </Link>
-        {description && (
-          <div>{description}</div>
-        )}
-        {code && (
-          <div className="py-2">
-            <pre className="border border-stone-800 --rounded-md my-2 px-2 py-4 text-xs sm:text-sm --pt-1 --pb-4 overflow-x-auto">
-              {code}
-            </pre>
-          </div>
-        )}
+    <section className="py-8">
+      <h2 className="py-2 text-xl md:text-2xl font-bold">{`${title}()`}</h2>
+      <Link
+        className="mb-4 text-accent inline-flex gap-1 items-center border-b border-b-transparent hover:border-b-accent motion-safe:transition-colors"
+        href={mdnUrl}
+        target="_blank"
+      >
+        MDN Docs <IconExternalLink/>
+      </Link>
+      <div>{description}</div>
+      <div className="py-2">
+        <pre className="bg-borders my-2 px-2 py-4 rounded-md text-xs sm:text-sm overflow-x-auto">
+          {code}
+        </pre>
       </div>
-      <div className="lg:flex-1 w-full max-w-[600px]">
-        <div className='mb-4 relative h-[250px] max-w-full'>
-          <canvas
-            className="absolute inset-0 p-1 w-full h-full border border-stone-800 --bg-[length:10px_10px] --bg-[radial-gradient(theme(colors.sky[900])_10%,_transparent_10%)]"
-            ref={canvasRef}
-            width={600}
-            height={250}
-          />
-          <button
-            onClick={onStart}
-            className='absolute left-2 top-2 cursor-default hover:text-sky-400 active:text-sky-700'
-          >
-            <IconPlay/>
-          </button>
-        </div>
+      <div className='mb-4 relative h-[250px] max-w-full'>
+        <canvas
+          className="absolute inset-0 p-1 w-full h-full rounded-md border border-borders"
+          ref={canvasRef}
+          width={768}
+          height={250}
+        />
+        <button
+          onClick={onStart}
+          className='absolute left-2 top-2 cursor-default hover:text-accent active:text-accent/75'
+        >
+          <IconPlay/>
+        </button>
       </div>
     </section>
   )
