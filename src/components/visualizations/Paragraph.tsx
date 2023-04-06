@@ -8,6 +8,16 @@ export const Highlight = ({ children }: HighlightProps) => {
   )
 }
 
+interface HighlightVariableProps {
+  children: string
+}
+
+export const HighlightVariable = ({ children }: HighlightVariableProps) => {
+  return (
+    <span className="bg-gray-900 px-1 text-cyan-500">{children}</span>
+  )
+}
+
 interface ParagraphProps {
   children: React.ReactNode
 }

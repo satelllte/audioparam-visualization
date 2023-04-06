@@ -1,10 +1,10 @@
 import { type AudioProcessingSchedulerFn, Visualization } from "./Visualization"
-import { Paragraph, Highlight } from './Paragraph'
+import { Paragraph, Highlight, HighlightVariable } from './Paragraph'
 
 const Description = () => {
   return (
     <Paragraph>
-      Schedules a gradual <Highlight>linear</Highlight> change in the value of the AudioParam.
+      Schedules a gradual <Highlight>linear</Highlight> change in the value of the <HighlightVariable>AudioParam</HighlightVariable>.
     </Paragraph>
   )
 }

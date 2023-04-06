@@ -1,11 +1,12 @@
-import { Highlight, Paragraph } from "./Paragraph"
+import { Highlight, HighlightVariable, Paragraph } from "./Paragraph"
 import { type AudioProcessingSchedulerFn, Visualization } from "./Visualization"
 
 const Description = () => {
   return (
     <Paragraph>
-      Schedules the start of a <Highlight>gradual</Highlight> change to the AudioParam value.
+      Schedules the start of a gradual change to the <HighlightVariable>AudioParam</HighlightVariable> value.
       Useful for decay or release portions of ADSR envelopes.
+      The change starts at the time specified in <HighlightVariable>startTime</HighlightVariable> and <Highlight>exponentially</Highlight> moves towards the value given by the <HighlightVariable>target</HighlightVariable> parameter.
     </Paragraph>
   )
 }

@@ -1,10 +1,10 @@
-import { Highlight, Paragraph } from "./Paragraph"
+import { Highlight, HighlightVariable, Paragraph } from "./Paragraph"
 import { type AudioProcessingSchedulerFn, Visualization } from "./Visualization"
 
 const Description = () => {
   return (
     <Paragraph>
-      <Highlight>Cancels</Highlight> all scheduled future changes to the AudioParam but <Highlight>holds</Highlight> its value at a given time until further changes are made using other methods.
+      <Highlight>Cancels</Highlight> all scheduled future changes to the <HighlightVariable>AudioParam</HighlightVariable> but <Highlight>holds</Highlight> its value at a given time until further changes are made using other methods.
     </Paragraph>
   )
 }
