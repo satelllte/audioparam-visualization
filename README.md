@@ -1,4 +1,4 @@
-# audioparam-visualization
+# 🎛️ AudioParam Visualization
 
 Visualization of how Web Audio API's `AudioParam` value changes over time
 
