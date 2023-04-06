@@ -11,8 +11,7 @@ const Description = () => {
 }
 
 const code =
-`const timeConstant = 0.15
-param.setTargetAtTime(maxValue, startTime, timeConstant)`
+`param.setTargetAtTime(maxValue, startTime, 0.15)`
 
 export const VisualizationSetTargetAtTime = () => {
   const scheduleAudioProcessing: AudioProcessingSchedulerFn = ({
