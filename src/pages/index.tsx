@@ -19,7 +19,7 @@ const HomePage = () => {
           </h2>
         </div>
       </header>
-      <main className='px-4 max-w-3xl mx-auto flex flex-col gap-8'>
+      <main className='px-4 py-8 max-w-3xl mx-auto flex flex-col gap-12'>
         <VisualizationSetValueAtTime/>
         <VisualizationLinearRampToValueAtTime/>
         <VisualizationExponentialRampToValueAtTime/>

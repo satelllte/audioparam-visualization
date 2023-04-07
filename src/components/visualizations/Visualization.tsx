@@ -91,7 +91,7 @@ export const Visualization = ({
   const mdnUrl = `https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/${title}`
 
   return (
-    <section className="py-8">
+    <section>
       <h2 className="py-2 text-xl md:text-2xl font-semibold">{`${title}()`}</h2>
       <Link
         className="mb-4 text-accent inline-flex gap-1 items-center border-b border-b-transparent hover:border-b-accent motion-safe:transition-colors"
