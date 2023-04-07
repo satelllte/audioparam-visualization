@@ -7,11 +7,7 @@ Visualization of how Web Audio API's `AudioParam` value changes over time
 
 <img src="./public/og.png"/>
 
-<img src="./public/waveform-1.png" width="200"/>
-
-<img src="./public/waveform-2.png" width="200"/>
-
-<img src="./public/waveform-3.png" width="200"/>
+<img src="./public/waveform-1.png" width="200"/><img src="./public/waveform-2.png" width="200"/><img src="./public/waveform-3.png" width="200"/>
 
 ## Development
 
