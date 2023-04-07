@@ -4,7 +4,7 @@ interface HighlightProps {
 
 export const Highlight = ({ children }: HighlightProps) => {
   return (
-    <span className="font-bold text-accent">{children}</span>
+    <span className="font-semibold text-accent">{children}</span>
   )
 }
 

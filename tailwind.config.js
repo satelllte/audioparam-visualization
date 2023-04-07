@@ -8,6 +8,7 @@ module.exports = {
       'transparent': 'transparent',
       'black': '#000000',
       'white': '#F5F5F7',
+      'white-dim': '#a1a1a6',
       'borders': '#1C1C1E',
       'accent': '#0A84FF',
     },
