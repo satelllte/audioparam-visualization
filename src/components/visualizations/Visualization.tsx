@@ -108,7 +108,7 @@ export const Visualization = ({
       </div>
       <div className='mb-4 relative h-[250px] max-w-full'>
         <canvas
-          className="absolute inset-0 p-1 w-full h-full rounded-md border border-borders"
+          className="absolute inset-0 p-1 w-full h-full rounded-md border-2 border-borders"
           ref={canvasRef}
           width={768}
           height={250}
