@@ -92,7 +92,7 @@ export const Visualization = ({
 
   return (
     <section className="py-8">
-      <h2 className="py-2 text-xl md:text-2xl font-bold">{`${title}()`}</h2>
+      <h2 className="py-2 text-xl md:text-2xl font-semibold">{`${title}()`}</h2>
       <Link
         className="mb-4 text-accent inline-flex gap-1 items-center border-b border-b-transparent hover:border-b-accent motion-safe:transition-colors"
         href={mdnUrl}
@@ -101,11 +101,9 @@ export const Visualization = ({
         MDN Docs <IconExternalLink/>
       </Link>
       <div>{description}</div>
-      <div className="py-2">
-        <pre className="bg-borders my-2 px-2 py-4 rounded-md text-xs sm:text-sm overflow-x-auto">
-          {code}
-        </pre>
-      </div>
+      <pre className="bg-borders my-4 px-2 py-4 rounded-md text-xs sm:text-sm overflow-x-auto">
+        {code}
+      </pre>
       <div className='mb-4 relative h-[250px] max-w-full'>
         <canvas
           className="absolute inset-0 p-1 w-full h-full rounded-md border-2 border-borders"

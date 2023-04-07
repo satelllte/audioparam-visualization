@@ -11,9 +11,9 @@ import {
 const HomePage = () => {
   return (
     <>
-      <header className='py-12 md:mb-12 border-b-2 border-b-borders'>
+      <header className='py-12 border-b-2 border-b-borders'>
         <div className='px-4 flex flex-col gap-4 max-w-3xl mx-auto'>
-          <h1 className='font-bold text-3xl md:text-4xl'>AudioParam Visualization</h1>
+          <h1 className='font-semibold text-3xl md:text-4xl'><span className='underline'>AudioParam</span> Visualization</h1>
           <h2 className='flex text-lg md:text-xl'>
             {'Visualization of how Web Audio API\'s AudioParam value changes over time.'}
           </h2>
