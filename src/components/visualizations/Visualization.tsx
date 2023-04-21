@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { useEffect, useRef } from "react"
+import { AudioContext, OscillatorNode, type IAudioParam } from 'standardized-audio-context'
 import { IconPlay } from "@/components/icons/IconPlay"
 import { IconExternalLink } from "@/components/icons/IconExternalLink"
 import { CanvasDrawer } from "./CanvasDrawer"
@@ -9,7 +10,7 @@ const minValue = 110
 const maxValue = 440
 
 export type AudioProcessingSchedulerOptions = {
-  param: AudioParam
+  param: IAudioParam
   startTime: number
   duration: number
   minValue: number
