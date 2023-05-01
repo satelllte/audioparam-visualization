@@ -10,7 +10,7 @@
     "deps:update": "npm i $(npm outdated | cut -d' ' -f 1 | sed '1d' | xargs -I '$' echo '$@latest' | xargs echo) --save-exact"
   },
   "dependencies": {
-    "next": "13.2.4",
+    "next": "13.3.4",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
