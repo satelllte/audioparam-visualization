@@ -19,7 +19,8 @@ function HomePage() {
             <span className='underline'>AudioParam</span> Visualization
           </h1>
           <h2 className='flex text-lg md:text-xl'>
-            Visualization of how Web Audio API&apos;s AudioParam value changes over time.
+            Visualization of how Web Audio API&apos;s AudioParam value changes
+            over time.
           </h2>
         </div>
       </header>
