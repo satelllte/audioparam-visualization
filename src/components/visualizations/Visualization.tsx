@@ -112,6 +112,7 @@ export function Visualization({
           height={250}
         />
         <button
+          type="button"
           className='absolute left-2 top-2 cursor-default hover:text-accent active:text-accent/75'
           onClick={onStart}
         >

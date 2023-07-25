@@ -1,18 +1,18 @@
 import { forwardRef } from 'react'
 
-type NativeSVGProps = React.SVGAttributes<SVGSVGElement>
+type NativeSvgProps = React.SVGAttributes<SVGSVGElement>
 
-type NativeSVGPropsToExtend = Omit<NativeSVGProps,
+type NativeSvgPropsToExtend = Omit<NativeSvgProps,
   | 'version'
   | 'xmlns'
   | 'xmlnsXlink'
 >
 
-type SVGProps = {
+type SvgProps = {
   children: React.ReactNode
-} & NativeSVGPropsToExtend
+} & NativeSvgPropsToExtend
 
-export const SVG = forwardRef<SVGSVGElement, SVGProps>(({
+export const Svg = forwardRef<SVGSVGElement, SvgProps>(({
   children,
   ...rest
 }, ref) => (
@@ -27,4 +27,4 @@ export const SVG = forwardRef<SVGSVGElement, SVGProps>(({
     </svg>
   ))
 
-SVG.displayName = 'SVG'
+Svg.displayName = 'Svg'

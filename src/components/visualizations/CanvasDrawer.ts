@@ -12,7 +12,7 @@ export class CanvasDrawer {
   private _yPrev = 0
   private _x = 0
   private _y = 0
-  private _frameId: number | undefined = null
+  private _frameId: number | undefined = undefined
 
   constructor(canvas: HTMLCanvasElement) {
     const context = canvas.getContext('2d')

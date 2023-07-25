@@ -3,7 +3,7 @@ import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import type { AppProps } from 'next/app'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] }) // eslint-disable-line new-cap
 
 const title = 'AudioParam Visualization'
 const description = 'Visualization of how Web Audio API\'s AudioParam value changes over time'
@@ -12,6 +12,7 @@ const ogImage = '/og.png'
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
+      {/* eslint-disable-next-line react/no-unknown-property */}
       <style jsx global>{`
         html {
           font-family: ${inter.style.fontFamily};

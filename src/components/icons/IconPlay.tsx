@@ -1,11 +1,11 @@
-import { SVG } from './internal/SVG'
+import { Svg } from './internal/Svg'
 
 /**
  * Source: https://icons.radix-ui.com/
  */
 export function IconPlay() {
   return (
-    <SVG
+    <Svg
       width={30}
       height={30}
       viewBox="0 0 15 15"
@@ -16,6 +16,6 @@ export function IconPlay() {
         fillRule="evenodd"
         clipRule="evenodd"
       />
-    </SVG>
+    </Svg>
   )
 }
