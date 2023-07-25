@@ -4,7 +4,7 @@ import {type AudioProcessingSchedulerFn, Visualization} from './Visualization';
 function Description() {
   return (
     <Paragraph>
-      Schedules the {"parameter's"} value to change following a{' '}
+      Schedules the parameter&apos;s value to change following a{' '}
       <Highlight>curve</Highlight> defined by a list of values. The curve is a{' '}
       <Highlight>linear interpolation</Highlight> between the sequence of values
       defined in an array.
