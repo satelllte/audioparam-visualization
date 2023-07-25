@@ -1,3 +1,4 @@
+'use client';
 import Link from 'next/link';
 import {useEffect, useRef} from 'react';
 import {ExternalLinkIcon, PlayIcon} from '@radix-ui/react-icons';

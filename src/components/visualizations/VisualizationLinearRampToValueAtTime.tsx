@@ -1,3 +1,4 @@
+'use client';
 import {type AudioProcessingSchedulerFn, Visualization} from './Visualization';
 import {Paragraph, Highlight, HighlightVariable} from './Paragraph';
 

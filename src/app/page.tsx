@@ -1,16 +1,16 @@
 import Link from 'next/link';
 import {GitHubLogoIcon} from '@radix-ui/react-icons';
 import {
-  VisualizationSetValueAtTime,
-  VisualizationLinearRampToValueAtTime,
-  VisualizationExponentialRampToValueAtTime,
-  VisualizationSetTargetAtTime,
-  VisualizationSetValueCurveAtTime,
   VisualizationCancelAndHoldAtTime,
   VisualizationCancelScheduledValues,
+  VisualizationExponentialRampToValueAtTime,
+  VisualizationLinearRampToValueAtTime,
+  VisualizationSetTargetAtTime,
+  VisualizationSetValueAtTime,
+  VisualizationSetValueCurveAtTime,
 } from '@/components/visualizations';
 
-function HomePage() {
+export default function IndexPage() {
   return (
     <>
       <header className='border-b-2 border-b-borders py-12'>
@@ -60,5 +60,3 @@ function HomePage() {
     </>
   );
 }
-
-export default HomePage;
