@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import {useEffect, useRef} from 'react';
-import {IconPlay} from '@/components/icons/IconPlay';
-import {IconExternalLink} from '@/components/icons/IconExternalLink';
+import {ExternalLinkIcon, PlayIcon} from '@radix-ui/react-icons';
 import {CanvasDrawer} from './CanvasDrawer';
 
 const duration = 1;
@@ -104,7 +103,7 @@ export function Visualization({
         href={mdnUrl}
         target='_blank'
       >
-        MDN Docs <IconExternalLink />
+        MDN Docs <ExternalLinkIcon />
       </Link>
       <div>{description}</div>
       <pre className='my-4 overflow-x-auto rounded-md bg-borders px-2 py-4 text-xs sm:text-sm'>
@@ -122,7 +121,7 @@ export function Visualization({
           className='absolute left-2 top-2 cursor-default hover:text-accent active:text-accent/75'
           onClick={onStart}
         >
-          <IconPlay />
+          <PlayIcon width={30} height={30} />
         </button>
       </div>
     </section>

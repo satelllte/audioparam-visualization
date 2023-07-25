@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import {IconGitHub} from '@/components/icons/IconGitHub';
+import {GitHubLogoIcon} from '@radix-ui/react-icons';
 import {
   VisualizationSetValueAtTime,
   VisualizationLinearRampToValueAtTime,
@@ -52,7 +52,7 @@ function HomePage() {
               target='_blank'
               className='inline-flex items-center gap-1 border-b border-b-transparent font-semibold hover:border-b-white hover:text-white motion-safe:transition-colors'
             >
-              GitHub <IconGitHub />
+              GitHub <GitHubLogoIcon />
             </Link>
           </div>
         </div>
