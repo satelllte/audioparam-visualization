@@ -6,13 +6,13 @@ const tailwindConfig = resolveConfig(twConfig)
 const lineColor = tailwindConfig.theme?.colors?.accent.toString() || '#FFFFFF'
 
 export class CanvasDrawer {
-  private _canvas: HTMLCanvasElement
-  private _context: CanvasRenderingContext2D
-  private _xPrev: number = 0
-  private _yPrev: number = 0
-  private _x: number = 0
-  private _y: number = 0
-  private _frameId: number | null = null
+  private readonly _canvas: HTMLCanvasElement
+  private readonly _context: CanvasRenderingContext2D
+  private _xPrev = 0
+  private _yPrev = 0
+  private _x = 0
+  private _y = 0
+  private _frameId: number | undefined = null
 
   constructor(canvas: HTMLCanvasElement) {
     const context = canvas.getContext('2d')
@@ -64,6 +64,7 @@ export class CanvasDrawer {
     if (!this._frameId) {
       return
     }
+
     cancelAnimationFrame(this._frameId)
   }
 }

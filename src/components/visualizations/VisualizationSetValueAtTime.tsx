@@ -1,7 +1,7 @@
 import { type AudioProcessingSchedulerFn, Visualization } from "./Visualization"
 import { Paragraph, Highlight, HighlightVariable } from './Paragraph'
 
-const Description = () => {
+function Description() {
   return (
     <Paragraph>
       Schedules an <Highlight>instant</Highlight> change to the <HighlightVariable>AudioParam</HighlightVariable> value at a precise time.
@@ -12,7 +12,7 @@ const Description = () => {
 const code =
 `param.setValueAtTime(maxValue, startTime + duration * 0.5)`
 
-export const VisualizationSetValueAtTime = () => {
+export function VisualizationSetValueAtTime() {
   const scheduleAudioProcessing: AudioProcessingSchedulerFn = ({
     param,
     startTime,

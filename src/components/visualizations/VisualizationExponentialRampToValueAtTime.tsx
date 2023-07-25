@@ -1,7 +1,7 @@
 import { type AudioProcessingSchedulerFn, Visualization } from "./Visualization"
 import { Paragraph, Highlight, HighlightVariable } from "./Paragraph"
 
-const Description = () => {
+function Description() {
   return (
     <Paragraph>
       Schedules a gradual <Highlight>exponential</Highlight> change in the value of the <HighlightVariable>AudioParam</HighlightVariable>.
@@ -12,7 +12,7 @@ const Description = () => {
 const code =
 `param.exponentialRampToValueAtTime(maxValue, startTime + duration)`
 
-export const VisualizationExponentialRampToValueAtTime = () => {
+export function VisualizationExponentialRampToValueAtTime() {
   const scheduleAudioProcessing: AudioProcessingSchedulerFn = ({
     param,
     startTime,
@@ -22,6 +22,7 @@ export const VisualizationExponentialRampToValueAtTime = () => {
   }) => {
     param.exponentialRampToValueAtTime(maxValue, startTime + duration)
   }
+
   return (
     <Visualization
       title="exponentialRampToValueAtTime"

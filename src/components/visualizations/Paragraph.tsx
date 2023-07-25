@@ -1,28 +1,28 @@
-interface HighlightProps {
+type HighlightProps = {
   children: string
 }
 
-export const Highlight = ({ children }: HighlightProps) => {
+export function Highlight({ children }: HighlightProps) {
   return (
     <span className="font-semibold text-accent">{children}</span>
   )
 }
 
-interface HighlightVariableProps {
+type HighlightVariableProps = {
   children: string
 }
 
-export const HighlightVariable = ({ children }: HighlightVariableProps) => {
+export function HighlightVariable({ children }: HighlightVariableProps) {
   return (
     <span className="underline">{children}</span>
   )
 }
 
-interface ParagraphProps {
+type ParagraphProps = {
   children: React.ReactNode
 }
 
-export const Paragraph = ({ children }: ParagraphProps) => {
+export function Paragraph({ children }: ParagraphProps) {
   return (
     <p>{children}</p>
   )

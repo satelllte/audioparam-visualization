@@ -18,19 +18,19 @@ export type AudioProcessingSchedulerOptions = {
 
 export type AudioProcessingSchedulerFn = (options: AudioProcessingSchedulerOptions) => void
 
-interface Props {
+type Props = {
   title: string
   description: React.ReactNode
   code: string
   scheduleAudioProcessing: AudioProcessingSchedulerFn
 }
 
-export const Visualization = ({
+export function Visualization({
   title,
   description,
   code,
   scheduleAudioProcessing,
-}: Props) => {
+}: Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
@@ -44,7 +44,7 @@ export const Visualization = ({
     canvas.width *= pixelRatio
     canvas.height *= pixelRatio
 
-    return () => { // prevent 4x canvas size in React strict mode
+    return () => { // Prevent 4x canvas size in React strict mode
       canvas.width /= pixelRatio
       canvas.height /= pixelRatio
     }
@@ -73,7 +73,7 @@ export const Visualization = ({
     })
 
     osc.start(startTime)
-    osc.stop(startTime + duration + 0.025) // give a bit of time to let the graphs draw up to max
+    osc.stop(startTime + duration + 0.025) // Give a bit of time to let the graphs draw up to max
 
     const canvasDrawer = new CanvasDrawer(canvas)
 
@@ -106,14 +106,14 @@ export const Visualization = ({
       </pre>
       <div className='mb-4 relative h-[250px] max-w-full'>
         <canvas
-          className="absolute inset-0 p-1 w-full h-full rounded-md border-2 border-borders"
           ref={canvasRef}
+          className="absolute inset-0 p-1 w-full h-full rounded-md border-2 border-borders"
           width={768}
           height={250}
         />
         <button
-          onClick={onStart}
           className='absolute left-2 top-2 cursor-default hover:text-accent active:text-accent/75'
+          onClick={onStart}
         >
           <IconPlay/>
         </button>

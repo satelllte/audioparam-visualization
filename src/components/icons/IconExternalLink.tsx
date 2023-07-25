@@ -3,7 +3,7 @@ import { SVG } from './internal/SVG'
 /**
  * Source: https://icons.radix-ui.com/
  */
-export const IconExternalLink = () => {
+export function IconExternalLink() {
   return (
     <SVG
       width={15}

@@ -1,7 +1,7 @@
 import { Highlight, HighlightVariable, Paragraph } from "./Paragraph"
 import { type AudioProcessingSchedulerFn, Visualization } from "./Visualization"
 
-const Description = () => {
+function Description() {
   return (
     <Paragraph>
       <Highlight>Cancels</Highlight> all scheduled future changes to the <HighlightVariable>AudioParam</HighlightVariable>.
@@ -15,7 +15,7 @@ param.linearRampToValueAtTime(minValue, startTime + duration * 0.5)
 param.linearRampToValueAtTime(maxValue, startTime + duration * 0.75)
 param.cancelScheduledValues(startTime + duration * 0.75)`
 
-export const VisualizationCancelScheduledValues = () => {
+export function VisualizationCancelScheduledValues() {
   const scheduleAudioProcessing: AudioProcessingSchedulerFn = ({
     param,
     startTime,

@@ -3,7 +3,7 @@ import { SVG } from './internal/SVG'
 /**
  * Source: https://icons.radix-ui.com/
  */
-export const IconPlay = () => {
+export function IconPlay() {
   return (
     <SVG
       width={30}

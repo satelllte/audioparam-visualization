@@ -1,7 +1,7 @@
 import { Highlight, Paragraph } from "./Paragraph"
 import { type AudioProcessingSchedulerFn, Visualization } from "./Visualization"
 
-const Description = () => {
+function Description() {
   return (
     <Paragraph>
       Schedules the {'parameter\'s'} value to change following a <Highlight>curve</Highlight> defined by a list of values.
@@ -19,7 +19,7 @@ const code =
   minValue,
 ], startTime, duration)`
 
-export const VisualizationSetValueCurveAtTime = () => {
+export function VisualizationSetValueCurveAtTime() {
   const scheduleAudioProcessing: AudioProcessingSchedulerFn = ({
     param,
     startTime,

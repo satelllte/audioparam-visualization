@@ -1,6 +1,6 @@
 import { SVG } from './internal/SVG'
 
-export const IconGitHub = () => {
+export function IconGitHub() {
   return (
     <SVG
       width={15}

@@ -8,15 +8,14 @@ type NativeSVGPropsToExtend = Omit<NativeSVGProps,
   | 'xmlnsXlink'
 >
 
-interface SVGProps extends NativeSVGPropsToExtend {
+type SVGProps = {
   children: React.ReactNode
-}
+} & NativeSVGPropsToExtend
 
 export const SVG = forwardRef<SVGSVGElement, SVGProps>(({
   children,
   ...rest
-}, ref) => {
-  return (
+}, ref) => (
     <svg
       ref={ref}
       version='1.1'
@@ -26,7 +25,6 @@ export const SVG = forwardRef<SVGSVGElement, SVGProps>(({
     >
       {children}
     </svg>
-  )
-})
+  ))
 
 SVG.displayName = 'SVG'

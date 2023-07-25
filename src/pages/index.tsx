@@ -10,7 +10,7 @@ import {
   VisualizationCancelScheduledValues,
 } from '@/components/visualizations'
 
-const HomePage = () => {
+function HomePage() {
   return (
     <>
       <header className='py-12 border-b-2 border-b-borders'>
