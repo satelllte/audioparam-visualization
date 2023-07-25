@@ -1,18 +1,19 @@
-import { type AudioProcessingSchedulerFn, Visualization } from "./Visualization"
-import { Paragraph, Highlight, HighlightVariable } from './Paragraph'
+'use client';
+import {type AudioProcessingSchedulerFn, Visualization} from './Visualization';
+import {Paragraph, Highlight, HighlightVariable} from './Paragraph';
 
-const Description = () => {
+function Description() {
   return (
     <Paragraph>
-      Schedules a gradual <Highlight>linear</Highlight> change in the value of the <HighlightVariable>AudioParam</HighlightVariable>.
+      Schedules a gradual <Highlight>linear</Highlight> change in the value of
+      the <HighlightVariable>AudioParam</HighlightVariable>.
     </Paragraph>
-  )
+  );
 }
 
-const code =
-`param.linearRampToValueAtTime(maxValue, startTime + duration)`
+const code = `param.linearRampToValueAtTime(maxValue, startTime + duration)`;
 
-export const VisualizationLinearRampToValueAtTime = () => {
+export function VisualizationLinearRampToValueAtTime() {
   const scheduleAudioProcessing: AudioProcessingSchedulerFn = ({
     param,
     startTime,
@@ -20,15 +21,15 @@ export const VisualizationLinearRampToValueAtTime = () => {
     minValue,
     maxValue,
   }) => {
-    param.linearRampToValueAtTime(maxValue, startTime + duration)
-  }
+    param.linearRampToValueAtTime(maxValue, startTime + duration);
+  };
 
   return (
     <Visualization
-      title="linearRampToValueAtTime"
-      description={<Description/>}
+      title='linearRampToValueAtTime'
+      description={<Description />}
       code={code}
       scheduleAudioProcessing={scheduleAudioProcessing}
     />
-  )
+  );
 }

@@ -1,25 +1,27 @@
-import { Highlight, Paragraph } from "./Paragraph"
-import { type AudioProcessingSchedulerFn, Visualization } from "./Visualization"
+'use client';
+import {Highlight, Paragraph} from './Paragraph';
+import {type AudioProcessingSchedulerFn, Visualization} from './Visualization';
 
-const Description = () => {
+function Description() {
   return (
     <Paragraph>
-      Schedules the {'parameter\'s'} value to change following a <Highlight>curve</Highlight> defined by a list of values.
-      The curve is a <Highlight>linear interpolation</Highlight> between the sequence of values defined in an array.
+      Schedules the parameter&apos;s value to change following a{' '}
+      <Highlight>curve</Highlight> defined by a list of values. The curve is a{' '}
+      <Highlight>linear interpolation</Highlight> between the sequence of values
+      defined in an array.
     </Paragraph>
-  )
+  );
 }
 
-const code =
-`param.setValueCurveAtTime([
+const code = `param.setValueCurveAtTime([
   minValue,
   minValue + (maxValue - minValue) * 0.5,
   minValue,
   maxValue,
   minValue,
-], startTime, duration)`
+], startTime, duration)`;
 
-export const VisualizationSetValueCurveAtTime = () => {
+export function VisualizationSetValueCurveAtTime() {
   const scheduleAudioProcessing: AudioProcessingSchedulerFn = ({
     param,
     startTime,
@@ -27,21 +29,25 @@ export const VisualizationSetValueCurveAtTime = () => {
     minValue,
     maxValue,
   }) => {
-    param.setValueCurveAtTime([
-      minValue,
-      minValue + (maxValue - minValue) * 0.5,
-      minValue,
-      maxValue,
-      minValue,
-    ], startTime, duration)
-  }
+    param.setValueCurveAtTime(
+      [
+        minValue,
+        minValue + (maxValue - minValue) * 0.5,
+        minValue,
+        maxValue,
+        minValue,
+      ],
+      startTime,
+      duration,
+    );
+  };
 
   return (
     <Visualization
-      title="setValueCurveAtTime"
-      description={<Description/>}
+      title='setValueCurveAtTime'
+      description={<Description />}
       code={code}
       scheduleAudioProcessing={scheduleAudioProcessing}
     />
-  )
+  );
 }
