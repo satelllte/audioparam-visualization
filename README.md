@@ -3,6 +3,7 @@
 Visualization of how Web Audio API's `AudioParam` value changes over time
 
 ## See LIVE
+
 ### ➡ https://audioparam-visualization.vercel.app
 
 <img src="./public/waveform-1.png" width="400"/>

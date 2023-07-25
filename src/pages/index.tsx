@@ -1,5 +1,5 @@
-import Link from 'next/link'
-import { IconGitHub } from '@/components/icons/IconGitHub'
+import Link from 'next/link';
+import {IconGitHub} from '@/components/icons/IconGitHub';
 import {
   VisualizationSetValueAtTime,
   VisualizationLinearRampToValueAtTime,
@@ -8,49 +8,58 @@ import {
   VisualizationSetValueCurveAtTime,
   VisualizationCancelAndHoldAtTime,
   VisualizationCancelScheduledValues,
-} from '@/components/visualizations'
+} from '@/components/visualizations';
 
 function HomePage() {
   return (
     <>
-      <header className='py-12 border-b-2 border-b-borders'>
-        <div className='px-4 flex flex-col gap-4 max-w-3xl mx-auto'>
-          <h1 className='font-semibold text-3xl md:text-4xl'><span className='underline'>AudioParam</span> Visualization</h1>
+      <header className='border-b-2 border-b-borders py-12'>
+        <div className='mx-auto flex max-w-3xl flex-col gap-4 px-4'>
+          <h1 className='text-3xl font-semibold md:text-4xl'>
+            <span className='underline'>AudioParam</span> Visualization
+          </h1>
           <h2 className='flex text-lg md:text-xl'>
-            {'Visualization of how Web Audio API\'s AudioParam value changes over time.'}
+            {
+              "Visualization of how Web Audio API's AudioParam value changes over time."
+            }
           </h2>
         </div>
       </header>
-      <main className='px-4 py-8 max-w-3xl mx-auto flex flex-col gap-12'>
-        <VisualizationSetValueAtTime/>
-        <VisualizationLinearRampToValueAtTime/>
-        <VisualizationExponentialRampToValueAtTime/>
-        <VisualizationSetTargetAtTime/>
-        <VisualizationSetValueCurveAtTime/>
-        <VisualizationCancelAndHoldAtTime/>
-        <VisualizationCancelScheduledValues/>
+      <main className='mx-auto flex max-w-3xl flex-col gap-12 px-4 py-8'>
+        <VisualizationSetValueAtTime />
+        <VisualizationLinearRampToValueAtTime />
+        <VisualizationExponentialRampToValueAtTime />
+        <VisualizationSetTargetAtTime />
+        <VisualizationSetValueCurveAtTime />
+        <VisualizationCancelAndHoldAtTime />
+        <VisualizationCancelScheduledValues />
       </main>
       <footer className='mt-2 py-8 text-sm text-white-dim'>
-        <div className='px-4 max-w-3xl mx-auto'>
-          <div className='before:content-["-"] before:pr-1'>
-            {'Made by: '}<Link
+        <div className='mx-auto max-w-3xl px-4'>
+          <div className='before:pr-1 before:content-["-"]'>
+            {'Made by: '}
+            <Link
               href='https://github.com/satelllte'
               target='_blank'
-              className='font-semibold border-b border-b-transparent hover:text-white hover:border-b-white motion-safe:transition-colors'
-            >@satelllte</Link>
+              className='border-b border-b-transparent font-semibold hover:border-b-white hover:text-white motion-safe:transition-colors'
+            >
+              @satelllte
+            </Link>
           </div>
-          <div className='before:content-["-"] before:pr-1'>
-            {'Source code: '}<Link
+          <div className='before:pr-1 before:content-["-"]'>
+            {'Source code: '}
+            <Link
               href='https://github.com/satelllte/audioparam-visualization'
               target='_blank'
-              className='font-semibold inline-flex gap-1 items-center border-b border-b-transparent hover:text-white hover:border-b-white motion-safe:transition-colors'
-            >GitHub <IconGitHub/>
+              className='inline-flex items-center gap-1 border-b border-b-transparent font-semibold hover:border-b-white hover:text-white motion-safe:transition-colors'
+            >
+              GitHub <IconGitHub />
             </Link>
           </div>
         </div>
       </footer>
     </>
-  )
+  );
 }
 
-export default HomePage
+export default HomePage;
